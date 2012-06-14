@@ -13,11 +13,16 @@
 		</li>
 		<li>
 		  <h:commandLink action="add?faces-redirect=true">
-			<h:outputText value="#{msg.personAddLabel}" />
+			<h:outputText value="#{msg.processorAddLabel}" />
 		  </h:commandLink></li>
 		<li>
-		  <h:commandLink action="showPersons?faces-redirect=true">
-			 <h:outputText value="#{msg.personAllLabel}" />
+		  <h:commandLink action="showProcessor?faces-redirect=true">
+			 <h:outputText value="#{msg.processorAllLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="searchProcessor?faces-redirect=true">
+			 <h:outputText value="#{msg.processorSearchLabel}" />
 		  </h:commandLink>
 		</li>
 	</ul>

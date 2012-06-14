@@ -6,43 +6,43 @@
 	template="/templates/default.xhtml">
 	<ui:define name="content">
 
-		<h:form id="personForm">
+		<h:form id="processorForm">
 			<h:panelGrid columns="2">
 
-				<h:outputText value="#{msg.personFirstNameLabel}" />
-				<h:inputText id="firstName" value="#{personBean.person.firstName}"
+				<h:outputText value="#{msg.processorNameLabel}" />
+				<h:inputText id="Name" value="#{processorBean.processor.name}"
 					required="#{true}" />
 
-				<h:outputText value="#{msg.personPinLabel}" />
-				<h:inputText id="pin" value="#{personBean.person.pin}"
-					validator="#{personBean.uniquePin}" required="#{true}">
-					<f:validator validatorId="pinValidator" />
+				<h:outputText value="#{msg.processorKodLabel}" />
+				<h:inputText id="pin" value="#{processorBean.processor.kod}"
+					validator="#{processorBean.uniqueKod}" required="#{true}">
+					<f:validator validatorId="kodValidator" />
 					<f:ajax execute="@this" render="messages beanState" />
 				</h:inputText>
 
-				<h:outputText value="#{msg.personDobLabel}" />
-				<h:inputText id="dob" value="#{personBean.person.dateOfBirth}">
+				<h:outputText value="#{msg.processorDobLabel}" />
+				<h:inputText id="dob" value="#{processorBean.processor.dateOfBirth}">
 					<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
 				</h:inputText>
 
-				<h:outputText value="#{msg.personZipCodeLabel}" />
-				<h:inputText id="zipCode" value="#{personBean.person.zipCode}" />
+				<h:outputText value="#{msg.processorSlotLabel}" />
+				<h:inputText id="slot" value="#{processorBean.processor.slot}" />
 
-				<h:outputText value="#{msg.personWeightLabel}" />
-				<h:inputText id="weight" value="#{personBean.person.weight}">
-					<f:validateDoubleRange minimum="20.5" maximum="150.5" />
+				<h:outputText value="#{msg.processorGHzLabel}" />
+				<h:inputText id="GHz" value="#{processorBean.processor.GHz}">
+					<f:validateDoubleRange minimum="0.1" maximum="3600.0" />
 					<f:ajax execute="@this" render="messages beanState" />
 				</h:inputText>
 
-				<h:outputText value="#{msg.personNumOfChildrenLabel}" />
-				<h:inputText id="noc" value="#{personBean.person.numOfChildren}">
+				<h:outputText value="#{msg.processorNumOfCoreLabel}" />
+				<h:inputText id="noc" value="#{processorBean.processor.numOfCore}">
 
 				</h:inputText>
 
 			</h:panelGrid>
 
-			<h:commandButton value="#{msg.personFormOKButton}"
-				action="#{personBean.addPerson}" />
+			<h:commandButton value="#{msg.processorFormOKButton}"
+				action="#{processorBean.addProcessor}" />
 
 
 			<h:panelGrid>
@@ -51,15 +51,15 @@
 			</h:panelGrid>
 
 			<h:panelGrid id="beanState" columns="2">
-				<h:outputText value="#{msg.personFirstNameLabel}" />
-				<h:outputText id="nameOutput" value="#{personBean.person.firstName}" />
+				<h:outputText value="#{msg.processorNameLabel}" />
+				<h:outputText id="nameOutput" value="#{processorBean.processor.name}" />
 
-				<h:outputText value="#{msg.personPinLabel}" />
-				<h:outputText id="pinOutput" value="#{personBean.person.pin}" />
+				<h:outputText value="#{msg.processorKodLabel}" />
+				<h:outputText id="pinOutput" value="#{processorBean.processor.kod}" />
 
-				<h:outputText value="#{msg.personDobLabel}" />
+				<h:outputText value="#{msg.processorDobLabel}" />
 				<h:outputText id="dobOutput"
-					value="#{personBean.person.dateOfBirth}" />
+					value="#{processorBean.processor.dateOfBirth}" />
 			</h:panelGrid>
 
 		</h:form>
