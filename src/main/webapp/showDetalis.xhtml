@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	
+	<ui:define name="content">
+	
+    <h:form>
+    
+     <h:dataTable value="#{processorBean.allProcessors}" var="item">
+      <f:facet name="header">#{msg.processorCheckLabel}</f:facet>
+      
+      <h:column>
+        <f:facet name="header">#{msg.processorNameLabel}</f:facet>
+        #{item.name}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.processorKodLabel}</f:facet>
+        #{item.kod}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.processorGHzLabel}</f:facet>
+        #{item.GHz}
+      </h:column>
+     </h:dataTable>
+     <h:commandButton value="#{msg.processorFormOKButton2}"
+				action="#{processorBean.Back}" />              
+	 <h:commandButton value="#{msg.processorFormOKButton}"
+				action="#{processorBean.showProcessor}" />
+    </h:form>
+      
+	</ui:define>
+	
+</ui:composition>
